@@ -1,0 +1,335 @@
+@charset "UFT-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* reset */
+ul,
+ol,
+li {
+    list-style: none;
+    /* 블릿기호 삭제 */
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    /* 밑줄삭제 */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* layout */
+
+/* wrap */
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* header */
+/* h1 */
+#header {}
+
+#header h1 {
+    float: left;
+    width: 110px;
+    padding-top: 15px;
+
+}
+
+/* inline요소 안에는 block요소가 들어가지 않음
+block요소 안에는 block요소,inline요소 다 들어감 */
+
+#header h1 a {}
+
+#header h1 a img {
+    width: 100%;
+}
+
+/* nav */
+
+#header nav {
+    float: right;
+    background-color: #ddd;
+}
+
+#header nav ul {}
+
+#header .nav ul li {
+    position: relative;
+    float: left;
+    width: 140px;
+    text-align: center;
+}
+
+#header .nav ul li a {
+    display: block;
+    padding: 24px 20px 20px;
+    transition: 0.3s;
+}
+
+#header .nav ul li a:hover {
+    background-color: #ccc;
+}
+
+#header .nav ul li .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 66px;
+    z-index: 10;
+
+}
+
+#header .nav ul li .submenu li {}
+
+#header .nav ul li .submenu li a {
+    background-color: #888;
+    padding: 10px;
+    color: #fff;
+}
+
+#header .nav ul li .submenu li a:hover {
+    background-color: #666;
+}
+
+/* banner */
+
+#banner {
+    overflow: hidden;
+}
+
+#banner .slidelist {
+    width: 3000px;
+    position: relative;
+}
+
+#banner .slidelist .slideimg {
+    width: 1000px;
+    float: left;
+    position: relative;
+    /* h2의 기준을 만들어줌 */
+
+}
+
+#banner .slidelist .slideimg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* translate-> 이동 */
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: #fff
+}
+
+#banner .slidelist .slideimg img {
+    width: 100%;
+    /*   img태그에 아래쪽에 빈틈이 생기는 이유-> 인라인요소이기 때문
+    해결방법
+    1) dispiay:block;
+    2):vertical-align:top; */
+    vertical-align: top;
+}
+
+/* content1 */
+
+#content1 {
+    margin-top: 20px;
+}
+
+#content1 .left {
+    float: left;
+    width: 49%;
+    /*         background-color: #f2f2f2;
+    background-image: url(../222_images/bg1.jpg);
+    background-repeat: no-repeat; */
+    background: #f2f2f2 url(../222_images/bg1.jpg) no-repeat;
+    background-size: 80px;
+    background-position: right 20px center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#content1 .right {
+    float: right;
+    width: 49%;
+    background: #f2f2f2 url(../222_images/bg2.jpg) no-repeat;
+    background-size: 80px;
+    background-position: right 20px center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#content1 .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+#content1 .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+
+
+#content1 .left .btn {
+    background: url(../222_images/icon1.jpg)no-repeat left center;
+    background-size: 20px;
+    padding-left: 25px;
+}
+
+#content1 .right .btn {
+    background: url(../222_images/icon2.jpg)no-repeat left center;
+    background-size: 20px;
+    padding-left: 25px;
+}
+
+#content1 .right .btn em {
+    /* 강조하기위한 태그들(인라인요소)
+    💫 b태그, strong태그
+    같아보이지만 다른 태그입니다.
+    b태그는 글자를 굵게만 만들지만, strong태그는 그 내용이 중요하다는 의미 또한 담고있다.
+    💫 i태그 , em태그
+    같아 보이지만 다른 태그입니다.
+    둘 다 글자를 기울이지만, i태그와 달리 em태그는 강조하는 역할을 합니다.  */
+}
+
+/* content2 */
+
+#content2 {
+    margin-top: 30px;
+}
+
+#content2 .tab_menu {}
+
+#content2 .tab_menu ul {
+    overflow: hidden;
+}
+
+#content2 .tab_menu ul li {
+    float: left;
+    /*     float에 인해 부모의 영역이 깨짐현상 막기 
+    1. clear:both;
+    2. overflow:hidden;
+    3. 부모에게 높이값을 강제로 주기 */
+    margin-right: 15px;
+}
+
+#content2 .tab_menu ul li a {
+    font-size: 24px;
+    display: block;
+    padding-bottom: 10px;
+    color: #999;
+}
+
+#content2 .tab_menu ul li.active a {
+    color: #000;
+    font-weight: bold;
+}
+
+
+
+#content2 .tab_cont {}
+
+#content2 .tab_cont>div {
+    overflow: hidden;
+}
+
+#content2 .tab_cont>div figure {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+
+}
+
+#content2 .tab_cont>div figure:last-child {
+    margin-right: 0;
+}
+
+/* #content2 .tab_cont>div figure:nth-child(2){}중간 애 부를때 */
+
+#content2 .tab_cont>div figure img {
+    width: 100%;
+}
+
+#content2 .tab_cont>div figure figcaption {}
+
+/* footer */
+#footer {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #202020;
+    
+}
+
+#footer h2 {
+    float: left;
+    width: 150px;
+}
+
+#footer h2 img {
+    width: 100%;
+}
+
+#footer .foot {
+    float: right;
+}
+
+#footer .foot ul {
+    padding-bottom: 10px;
+}
+
+#footer .foot ul li {
+    display: inline;
+}
+
+#footer .foot ul li a {
+    color: #fff;
+}
+#footer .foot address{
+    color: #ccc;
+    font-style: normal;
+}
+
+
+/* layer-bg */
+
+.layer-bg {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* -> width: 100%; height: 100%; */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.layer-bg .layer {
+    position: absolute;
+    left: calc(50% - 250px);
+    top: calc(50% - 250px);
+    background-color: #fff;
+    padding: 20px;
+    width: 500px;
+    height: 500px;
+
+}
+
+.layer-bg .layer h2 {}
+
+.layer-bg .layer .close {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+}
