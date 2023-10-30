@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //⭐🌞비교연산자⭐🌞
+        //불리언형--> 참(true) vs 거짓(false)-->긍정 vs 부정
+
+        console.log(100 < 200) //true
+        console.log(100 == 200) //false :같은가?
+        console.log(100 != 200) //true : 다른가? 
+        console.log(100 <= 200) //true : 작거나 같은가?=> 작다 또는 같은가? 작다에 해당되므로 true
+        console.log(100 >= 200) //false : 크거나 같은가?=> 크다 또는 같은가? 둘다 해당 안됨
+
+        // AND/OR 연산자
+        // AND 연산자 && --> 양쪽 모두 true 일때만 true
+        console.log(true && true) //true
+        console.log(false && true) //false
+        console.log(true && false) //false
+        console.log(false && false) //false
+
+        //OR 연산자 || --> 한쪽이라도 true이면 true / 둘다 false 일때만 false
+        console.log(true || true) //true
+        console.log(false || true) //true
+        console.log(true || false) //true
+        console.log(false || false) //false
+
+        // 🚩&& : 앞의 것이 false 이면 뒤의 것을 평가(실행)할 필요없음
+        // 🚩|| : 앞의 것이 true 이면 뒤의 것을 평가(실행)할 필요 없음 
+
+        // [??] : null 병합연산자
+        // null 또는 undefined만 대체
+        let x; // 아무것도 할당되지 않았을때 기본적으로 undefinde가 할당된다.
+        x ?? console.log(x, 'x에 값이 없습니다.') //undefined 'x에 값이 없습니다.'
+
+        let xx = 0;
+        xx ?? console.log(xx, 'xx에 값이 없습니다.')
+
+        let xxx = null;
+        xxx ?? console.log(xxx, 'xxx에 값이 없습니다.')
+
+        let baby1 = "홍길동";
+        let baby2;
+        let nameTag1 = baby1 ?? '1번아기';
+        let nameTag2 = baby2 ?? '2번아기';
+
+        console.log(nameTag1) //홍길동
+        console.log(nameTag2) //2번아기
+
+
+        //단항 산술
+        //후치연산자 x++
+        //전치연산자 ++x
+
+        //후치연산자 x--
+        //전치연산자 --x
+
+        let yarn = 1;
+        yarn++; //1나갈때 1더해짐
+        console.log(yarn); //2
+
+        ++yarn; //들어오자마자 1더해짐 
+        console.log(yarn); //3
+        //단항 부정
+        //!x --> x에 부정 x가 true이면 false ,x가 false이면 true
+    </script>
+</body>
+
+</html>

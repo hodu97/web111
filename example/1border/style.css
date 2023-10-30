@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.border {
+    height: 100vh;
+    background-color: #fdeefd;
+}
+
+.border .border_blob {
+    width: 480px;
+    height: 480px;
+    position: relative;
+    left: calc(50% - 240px);
+    top: calc(50% - 240px);
+    overflow: hidden;
+    /* 수평: h, 수직:v, 왼쪽:l, 오른쪽:r, 위쪽:t, 아래쪽:b */
+    border-radius: 20px;
+    /* tl,tr,br,bl */
+    border-radius: 10px 40px;
+    /* tl,tr br,bl */
+    /* border-radius: htl htr hbr hbl / vtl vtr vbr vbl; */
+    /* border-radius: 44% 56% 70% 30% / 52% 30% 70% 48%; */
+    animation: go 6s infinite alternate;
+}
+
+.border .border_blob img {
+    width: 100%;
+}
+
+@keyframes go {
+    0% {
+        border-radius: 30% 70% 70% 30% / 64% 30% 70% 36%
+    }
+
+    50% {
+        border-radius: 30% 70% 70% 30% / 64% 58% 42% 36%;
+    }
+
+    100% {
+        border-radius: 64% 36% 70% 30% / 47% 58% 42% 53%;
+    }
+}
